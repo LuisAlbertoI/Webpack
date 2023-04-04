@@ -5,15 +5,6 @@ module.exports = {
     "plugin:react/recommended",
   ],
   parserOptions: {
-    requireConfigFile: false,
-    babelOptions: {
-      babelrc: false,
-      configFile: false,
-      presets: [
-        "@babel/preset-env",
-        "@babel/preset-react"
-      ],
-    },
     ecmaVersion: "latest",
     sourceType: "module",
     ecmaFeatures: {

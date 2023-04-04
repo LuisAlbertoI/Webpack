@@ -4,7 +4,7 @@ const path = require('path');
 
 module.exports = {
   context: path.resolve(__dirname, 'src'),
-  entry: path.join(__dirname, 'src/index.js'),
+  entry: path.join(__dirname, 'src'),
   output: {
     path: path.resolve(__dirname, 'build'),
     filename: 'static/chunks/[name].[fullhash:8].js',
@@ -13,18 +13,9 @@ module.exports = {
   module: {
     rules: [
       {
-        enforce: 'pre',
-        test: /\.(js|jsx)$/,
+        test: /\.(js|ts)x?$/,
         exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader',
-          options: {
-            presets: [
-              '@babel/preset-env',
-              '@babel/preset-react'
-            ]
-          }
-        }
+        loader: 'babel-loader'
       },
       {
         test: /\.(jpe?g|png|svg|git)$/i,
@@ -43,6 +34,6 @@ module.exports = {
     }),
   ],
   resolve: {
-    extensions: ['.js', '.jsx']
+    extensions: ['.js', '.jsx', '.ts', '.tsx']
   },
 };

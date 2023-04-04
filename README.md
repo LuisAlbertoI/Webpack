@@ -6,6 +6,7 @@ Configuracion de webpack
 
 * babel
 * eslint
+* typescript
 * css - sass
 
 ***
