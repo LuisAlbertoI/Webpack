@@ -1,8 +1,11 @@
+const path = require('path');
+
 module.exports = {
   mode: 'development',
-  devtool: 'source-map',
+  devtool: 'inline-source-map',
   output: {
-    publicPath: 'http://localhost:3000/'
+    filename: 'static/[name].bundle.js',
+    publicPath: 'http://localhost:3000/',
   },
   module: {
     rules: [
@@ -22,6 +25,7 @@ module.exports = {
     ]
   },
   devServer: {
+    static: path.resolve(__dirname, 'build'),
     historyApiFallback: true,
     port: 3000
   }

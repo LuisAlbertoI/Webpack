@@ -5,7 +5,10 @@ const root = document.getElementById('root');
 if (root) {
   createRoot(root).render(
     <React.StrictMode>
-      <div>welcome to react</div>
+      <div>
+        <p>welcome to react</p>
+        <p>{process.env.NAME}</p>
+      </div>
     </React.StrictMode>
   );
 }

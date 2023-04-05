@@ -3,14 +3,19 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
   mode: 'production',
+  devtool: false,
   output: {
-    clean: true
+    filename: 'static/chunks/[name].[fullhash:8].js',
+    chunkFilename: 'static/chunks/[id].[chunkhash:8].js',
   },
   optimization: {
     minimize: true,
     minimizer: [
       new CssMinimizerPlugin(),
-    ]
+    ],
+    splitChunks: {
+      chunks: 'all',
+    },
   },
   module: {
     rules: [

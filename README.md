@@ -26,5 +26,5 @@ yarn run build
 ### Servidor de desarrollo
 
 ``` 
-yarn run start
+yarn run dev
 ```

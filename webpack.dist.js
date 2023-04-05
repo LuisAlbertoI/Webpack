@@ -1,5 +1,6 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ESLintPlugin = require('eslint-webpack-plugin');
+const Dotenv = require('dotenv-webpack');
 const path = require('path');
 
 module.exports = {
@@ -7,8 +8,7 @@ module.exports = {
   entry: path.join(__dirname, 'src'),
   output: {
     path: path.resolve(__dirname, 'build'),
-    filename: 'static/chunks/[name].[fullhash:8].js',
-    chunkFilename: 'static/chunks/[id].[chunkhash:8].js',
+    clean: true
   },
   module: {
     rules: [
@@ -32,6 +32,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: path.join(__dirname, 'public/index.html'),
     }),
+    new Dotenv({ path: '.env.local' }),
   ],
   resolve: {
     extensions: ['.js', '.jsx', '.ts', '.tsx']
