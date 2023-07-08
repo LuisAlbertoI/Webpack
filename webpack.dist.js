@@ -1,6 +1,5 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ESLintPlugin = require('eslint-webpack-plugin');
-const CopyPlugin = require('copy-webpack-plugin');
 const Dotenv = require('dotenv-webpack');
 const path = require('path');
 
@@ -32,19 +31,6 @@ module.exports = {
     new ESLintPlugin(),
     new HtmlWebpackPlugin({
       template: path.join(__dirname, 'public/index.html'),
-    }),
-    new CopyPlugin({
-      patterns: [
-        {
-          from: path.resolve(__dirname, 'public'),
-          noErrorOnMissing: true,
-          globOptions: {
-            ignore: [
-              '**/*.html'
-            ]
-          }
-        }
-      ],
     }),
     new Dotenv({ path: '.env.local' }),
   ],
