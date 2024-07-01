@@ -1,19 +1,19 @@
-import React from 'react';
-import { createRoot } from 'react-dom/client';
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
+import "styles";
 
-import './styles/main.scss';
+const App = () => (
+  <div className="bg-slate-900 rounded-md py-4">
+    <p className="text-white text-center">welcome to react</p>
+  </div>
+);
 
-const root = document.getElementById('root');
+const root = document.getElementById("root");
+
 if (root) {
   createRoot(root).render(
-    <React.StrictMode>
-      <div className='p-4'>
-        <div className='py-5 rounded-md bg-slate-900 text-white text-center'>
-          welcome to react
-        </div>
-        <div className="py-5"></div>
-        <div className=""></div>
-      </div>
-    </React.StrictMode>
+    <StrictMode>
+      <App />
+    </StrictMode>
   );
 }

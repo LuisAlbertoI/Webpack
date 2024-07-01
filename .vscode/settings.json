@@ -1,11 +1,11 @@
 {
   "files.associations": {
     "*.css": "tailwindcss",
-    "*.scss": "tailwindcss",
+    "*.scss": "tailwindcss"
   },
   "tailwindCSS.includeLanguages": {
     "javascriptreact": "javascriptreact",
-    "typescriptreact": "typescriptreact",
+    "typescriptreact": "typescriptreact"
   },
   "editor.quickSuggestions": {
     "strings": true

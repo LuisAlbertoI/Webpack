@@ -3,10 +3,7 @@
     "baseUrl": "src",
     "target": "esnext",
     "module": "esnext",
-    "lib": [
-      "dom",
-      "esnext"
-    ],
+    "lib": ["dom", "esnext"],
     "strict": true,
     "noEmit": true,
     "allowJs": true,
@@ -15,8 +12,5 @@
     "esModuleInterop": true,
     "jsx": "preserve"
   },
-  "exclude": [
-    "node_modules",
-    "build"
-  ]
+  "exclude": ["node_modules", "build"]
 }

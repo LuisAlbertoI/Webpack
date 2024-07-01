@@ -1,13 +1,14 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const ESLintPlugin = require('eslint-webpack-plugin');
-const Dotenv = require('dotenv-webpack');
-const path = require('path');
+const Webpack = require("webpack");
+const ESLintPlugin = require("eslint-webpack-plugin");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const Dotenv = require("dotenv-webpack");
+const path = require("path");
 
 module.exports = {
-  context: path.resolve(__dirname, 'src'),
-  entry: path.join(__dirname, 'src'),
+  context: path.resolve(__dirname, "src"),
+  entry: path.join(__dirname, "src"),
   output: {
-    path: path.resolve(__dirname, 'build'),
+    path: path.resolve(__dirname, "build"),
     clean: true
   },
   module: {
@@ -15,26 +16,30 @@ module.exports = {
       {
         test: /\.(js|ts)x?$/,
         exclude: /node_modules/,
-        loader: 'babel-loader'
+        loader: "babel-loader"
       },
       {
         test: /\.(jpe?g|png|svg|git)$/i,
-        type: 'asset/resource',
+        type: "asset/resource"
       },
       {
         test: /\.(woff?2|eot|ttf|otf)$/i,
-        type: 'asset/resource',
-      },
+        type: "asset/resource"
+      }
     ]
   },
   plugins: [
     new ESLintPlugin(),
     new HtmlWebpackPlugin({
-      template: path.join(__dirname, 'public/index.html'),
+      template: path.join(__dirname, "public/index.html")
     }),
-    new Dotenv({ path: '.env.local' }),
+    new Dotenv({ path: ".env.local" }),
+    new Webpack.ProvidePlugin({
+      React: "react"
+    })
   ],
   resolve: {
-    extensions: ['.js', '.jsx', '.ts', '.tsx']
-  },
+    modules: [path.resolve(__dirname, "src"), "node_modules"],
+    extensions: [".js", ".ts", ".jsx", ".tsx", ".json", ".css"]
+  }
 };

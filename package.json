@@ -4,8 +4,9 @@
   "description": "webpack 5",
   "private": true,
   "scripts": {
+    "dev": "webpack server --config webpack.dist.js --config webpack.dev.js --merge",
     "build": "webpack --config webpack.dist.js --config webpack.prod.js --merge",
-    "dev": "webpack server --config webpack.dist.js --config webpack.dev.js --merge"
+    "optimize": "node optimizer.mjs"
   },
   "keywords": [
     "webpack",
@@ -35,6 +36,8 @@
     "eslint-plugin-react": "^7.32.2",
     "eslint-webpack-plugin": "^4.0.0",
     "html-webpack-plugin": "^5.5.0",
+    "imagemin": "^9.0.0",
+    "imagemin-webp": "^8.0.0",
     "mini-css-extract-plugin": "^2.7.5",
     "postcss": "^8.4.24",
     "postcss-loader": "^7.3.2",
